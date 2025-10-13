@@ -18,3 +18,37 @@ This project provides an **easy-to-use web UI Agent** for:
 [![Whisper + ROCm](https://img.shields.io/badge/Whisper-ROCm_6.x-blue)](https://github.com/openai/whisper)
 
 <img width="1265" height="743" alt="image" src="https://github.com/user-attachments/assets/d1d24c7f-0e5c-4266-a6ad-dde8a5858fe6" />
+
+# 🌀 Installation
+
+### Download the the server script
+
+```echo
+wget https://raw.githubusercontent.com/JoergR75/FLUX-text-to-image-ROCm/refs/heads/main/Gradio-Web-Agent/FLUX-gradio-web-agent.py
+```
+<img width="1266" height="199" alt="{282018B2-4594-456B-A4C2-7B58E0AF1EE1}" src="https://github.com/user-attachments/assets/15e50547-eb49-4e11-be74-51569f440432" />
+
+### Launch the Gradio web Agent server
+
+```echo
+python3 FLUX-gradio-web-agent.py
+```
+The Web server will be launched with following parameters:
+- http://127.0.0.1:7860 → The Gradio web interface is running locally on your machine. Open this link in your browser to access the app.
+- share=True → If you set this option inside the script’s launch() method, Gradio will create a temporary public URL. This allows you to share access with others outside your local network.
+> ⚠️ **Attention**  
+> The first time you launch the script, it will download the model weights.  
+> This process can take **15–20 minutes**, depending on your hardware and internet connection.
+<img width="516" height="69" alt="{297F19AF-995D-4A17-BBA1-B49F0CB68F36}" src="https://github.com/user-attachments/assets/c8b90dfb-954e-4306-9352-2afdbcf094f9" />
+
+### Launch the Gradio web Agent from another device connected to same network
+
+First, SSH into the web server and forward port **7860**:
+```echo
+ssh -L 7860:127.0.0.1:7860 ai1@pc1
+```
+or use the the server IP address
+```echo
+ssh -L 7860:127.0.0.1:7860 ai1@192.168.178.xxx
+```
+Now you can open **http://127.0.0.1:7860** in your local browser to access the Gradio Web Agent.
