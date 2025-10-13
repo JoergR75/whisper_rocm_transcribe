@@ -31,7 +31,7 @@ wget https://raw.githubusercontent.com/JoergR75/whisper_rocm_transcribe/refs/hea
 ### Launch the Gradio web Agent server
 
 ```echo
-python3 FLUX-gradio-web-agent.py
+python3 whisper_rocm_gradio_web_ui.py
 ```
 The Web server will be launched with following parameters:
 - http://127.0.0.1:7860 → The Gradio web interface is running locally on your machine. Open this link in your browser to access the app.
