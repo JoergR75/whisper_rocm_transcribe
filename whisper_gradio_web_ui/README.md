@@ -24,7 +24,7 @@ This project provides an **easy-to-use web UI Agent** for:
 ### Download the the server script
 
 ```echo
-wget 
+wget https://raw.githubusercontent.com/JoergR75/whisper_rocm_transcribe/refs/heads/main/whisper_gradio_web_ui/whisper_rocm_gradio_web_ui.py
 ```
 <img width="1092" height="186" alt="image" src="https://github.com/user-attachments/assets/21e9407c-b5ad-484e-b06b-5c2a880ae092" />
 
