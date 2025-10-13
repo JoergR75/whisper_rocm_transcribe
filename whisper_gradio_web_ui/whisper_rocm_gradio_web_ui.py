@@ -106,7 +106,7 @@ def whisper_web_ui(audio_file, model_name, language, task, out_format):
 
 # Gradio UI
 with gr.Blocks() as demo:
-    gr.Markdown("## Whisper ROCm Transcription Web UI")
+    gr.Markdown("## 🗣️➡️📝 Whisper ROCm Transcription We UI Agent [![ROCm](https://img.shields.io/badge/AMD-ROCm_6.x-red)](https://rocmdocs.amd.com/) [![Whisper + ROCm](https://img.shields.io/badge/Whisper-ROCm_6.x-blue)](https://github.com/openai/whisper)" )
     with gr.Row():
         with gr.Column():
             audio_input = gr.Audio(label="Upload audio file", type="filepath")
@@ -127,4 +127,3 @@ with gr.Blocks() as demo:
 
 if __name__ == "__main__":
     demo.launch(server_name="0.0.0.0", server_port=7860, share=False)
-
