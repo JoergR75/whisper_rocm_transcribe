@@ -6,7 +6,7 @@ Automatically selects GPU or CPU, checks for ffmpeg, and saves results as .txt, 
 
 Additional requirements:
   automated deployment script for ROCm 6.4.x
-  pip install git+https://github.com/openai/whisper.git
+  pip3 install git+https://github.com/openai/whisper.git
   sudo apt install ffmpeg
 
 Usage example:
