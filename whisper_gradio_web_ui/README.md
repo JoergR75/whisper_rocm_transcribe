@@ -39,7 +39,8 @@ The Web server will be launched with following parameters:
 > ⚠️ **Attention**  
 > The first time you launch the script, it will download the model weights.  
 > This process can take **1–5 minutes**, depending on your hardware and internet connection.
-<img width="516" height="69" alt="{297F19AF-995D-4A17-BBA1-B49F0CB68F36}" src="https://github.com/user-attachments/assets/c8b90dfb-954e-4306-9352-2afdbcf094f9" />
+
+<img width="956" height="112" alt="image" src="https://github.com/user-attachments/assets/4fa20acc-d8af-4769-a3d0-d2875a2f6f25" />
 
 ### Launch the Gradio web Agent from another device connected to same network
 
