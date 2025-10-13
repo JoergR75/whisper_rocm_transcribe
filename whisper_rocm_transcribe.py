@@ -24,17 +24,17 @@ import torch
 from datetime import datetime
 
 def choose_device():
-    # Bei ROCm ist torch.cuda.* normalerweise die API (PyTorch/ROCm mappt auf HIP).
+    # On ROCm, torch.cuda.* is normally the API (PyTorch/ROCm maps it to HIP).
     if torch.cuda.is_available():
         device = "cuda"
         try:
             name = torch.cuda.get_device_name(0)
         except Exception:
             name = "AMD GPU (ROCm)"
-        print(f"[INFO] GPU verfügbar: {name} (device='{device}')")
+        print(f"[INFO] GPU available: {name} (device='{device}')")
     else:
         device = "cpu"
-        print("[INFO] Keine GPU entdeckt — benutze CPU (langsamer).")
+        print("[INFO] no GPU available — CPU will be used (slower).")
     return device
 
 def ensure_ffmpeg():
