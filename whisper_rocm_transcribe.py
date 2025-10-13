@@ -50,11 +50,11 @@ def transcribe_file(input_path, model_name="small", device="cuda", language=None
     model = whisper.load_model(model_name)
     model.to(device)
 
-    # Wenn GPU aber kein fp16 unterstützt oder Modell klein ist, kann fp16 abgeschaltet werden.
+    # If the GPU does not support fp16 or the model is small, fp16 can be disabled.
     if device == "cpu":
         fp16 = False
 
-    print(f"[INFO] Transkribiere '{input_path}' auf device='{device}', fp16={fp16} ...")
+    print(f"[INFO] Transcribe '{input_path}' auf device='{device}', fp16={fp16} ...")
     # whisper.transcribe wrapper
     result = model.transcribe(input_path, language=language, task=task, fp16=fp16)
     return model, result
@@ -67,7 +67,7 @@ def save_outputs(result, out_prefix, out_formats=("txt",)):
         txt_path = f"{out_prefix}.txt"
         with open(txt_path, "w", encoding="utf-8") as f:
             f.write(text + "\n")
-        print(f"[OK] TXT gespeichert: {txt_path}")
+        print(f"[OK] TXT file has been saved: {txt_path}")
 
     if "vtt" in out_formats and segments:
         vtt_path = f"{out_prefix}.vtt"
@@ -83,7 +83,7 @@ def save_outputs(result, out_prefix, out_formats=("txt",)):
                     s = t % 60
                     return f"{h:02d}:{m:02d}:{s:06.3f}".replace(".", ",")
                 f.write(f"{i}\n{fmt(start)} --> {fmt(end)}\n{seg['text'].strip()}\n\n")
-        print(f"[OK] VTT gespeichert: {vtt_path}")
+        print(f"[OK] VTT file has been saved: {vtt_path}")
 
     if "srt" in out_formats and segments:
         srt_path = f"{out_prefix}.srt"
@@ -98,7 +98,7 @@ def save_outputs(result, out_prefix, out_formats=("txt",)):
                     ms = int((t - int(t)) * 1000)
                     return f"{h:02d}:{m:02d}:{s:02d},{ms:03d}"
                 f.write(f"{i}\n{fmt_srt(start)} --> {fmt_srt(end)}\n{seg['text'].strip()}\n\n")
-        print(f"[OK] SRT gespeichert: {srt_path}")
+        print(f"[OK] SRT file has been saved: {srt_path}")
 
 def parse_args():
     p = argparse.ArgumentParser(description="Transcribe audio with OpenAI Whisper on ROCm (AMD).")
