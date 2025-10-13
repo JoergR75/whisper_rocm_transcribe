@@ -5,6 +5,7 @@ Transcribes or translates audio files using OpenAI Whisper with ROCm (AMD GPU) a
 Automatically selects GPU or CPU, checks for ffmpeg, and saves results as .txt, .vtt, or .srt subtitle files.
 
 Additional requirements:
+  automated deployment script for ROCm 6.4.x
   pip install git+https://github.com/openai/whisper.git
   sudo apt install ffmpeg
 
