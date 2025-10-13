@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
 whisper_rocm_transcribe.py
-transcribes audio files with OpenAI Whisper on ROCm (AMD GPU), when available.
+Transcribes or translates audio files using OpenAI Whisper with ROCm (AMD GPU) acceleration when available.
+Automatically selects GPU or CPU, checks for ffmpeg, and saves results as .txt, .vtt, or .srt subtitle files.
 
 Additional requirements:
   pip install git+https://github.com/openai/whisper.git
