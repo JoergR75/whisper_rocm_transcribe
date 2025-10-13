@@ -10,6 +10,9 @@ Additional requirements:
 
 Usage example:
   python whisper_rocm_transcribe.py --input audio.mp3 --model small --out out_prefix --language de --format txt
+
+author:
+  Joerg Roskowetz
 """
 
 import argparse
@@ -34,7 +37,7 @@ def choose_device():
     return device
 
 def ensure_ffmpeg():
-    # whisper nutzt ffmpeg; prüfen ob verfügbar
+    # whisper will use ffmpeg; verify if available
     from shutil import which
     if which("ffmpeg") is None:
         print("[WARN] ffmpeg nicht gefunden. Installiere ffmpeg (apt/yum/pacman) bevor du große Audios transkribierst.")
