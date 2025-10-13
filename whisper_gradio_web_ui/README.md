@@ -21,7 +21,7 @@ This project provides an **easy-to-use web UI Agent** for:
 
 # 🌀 Installation
 
-### Download the the server script
+### Download the server script
 
 ```echo
 wget https://raw.githubusercontent.com/JoergR75/whisper_rocm_transcribe/refs/heads/main/whisper_gradio_web_ui/whisper_rocm_gradio_web_ui.py
