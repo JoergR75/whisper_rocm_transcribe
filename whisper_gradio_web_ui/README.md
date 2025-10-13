@@ -24,9 +24,9 @@ This project provides an **easy-to-use web UI Agent** for:
 ### Download the the server script
 
 ```echo
-wget https://raw.githubusercontent.com/JoergR75/FLUX-text-to-image-ROCm/refs/heads/main/Gradio-Web-Agent/FLUX-gradio-web-agent.py
+wget 
 ```
-<img width="1266" height="199" alt="{282018B2-4594-456B-A4C2-7B58E0AF1EE1}" src="https://github.com/user-attachments/assets/15e50547-eb49-4e11-be74-51569f440432" />
+<img width="1092" height="186" alt="image" src="https://github.com/user-attachments/assets/21e9407c-b5ad-484e-b06b-5c2a880ae092" />
 
 ### Launch the Gradio web Agent server
 
