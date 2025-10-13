@@ -41,9 +41,9 @@ def ensure_ffmpeg():
     # whisper will use ffmpeg; verify if available
     from shutil import which
     if which("ffmpeg") is None:
-        print("[WARN] ffmpeg nicht gefunden. Installiere ffmpeg (apt/yum/pacman) bevor du große Audios transkribierst.")
+        print("[WARN] ffmpeg not found. Will install ffmpeg (apt/yum/pacman) bevor du große Audios transkribierst.")
     else:
-        print("[INFO] ffmpeg gefunden.")
+        print("[INFO] ffmpeg found.")
 
 def transcribe_file(input_path, model_name="small", device="cuda", language=None, task="transcribe", fp16=True):
     print(f"[INFO] Lade Whisper-Modell '{model_name}'...")
