@@ -1,8 +1,15 @@
 # 🗣️➡️📝 Whisper Transcription Web UI Agent — ROCm-Ready
 
-A lightweight **Gradio-based web interface** for running the **OpenAI-Whisper Transcription model** on AMD ROCm systems.  
-This project provides an easy-to-use web UI to generate AI images from text prompts, monitor VRAM usage, and optionally share the interface online.
-**Optimized for Radeon AI PRO R9700 GPUs · Supports bf16/fp16 · Hugging Face Models**
+A **lightweight Gradio-based web interface** for running the OpenAI **Whisper** transcription model on **AMD ROCm** systems.  
+
+This project provides an **easy-to-use web UI Agent** for:
+
+- Drag-and-drop transcription of audio files  
+- Recording audio directly in the browser  
+- Generating transcriptions and translations    
+- Optionally sharing the interface online  
+
+**Optimized for Radeon AI PRO R9700 GPUs** · Supports **bf16/fp16**
 
 [![ROCm](https://img.shields.io/badge/AMD-ROCm_6.x-red)](https://rocmdocs.amd.com/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.10.0.dev%2Brocm6.4-ee4c2c?logo=pytorch)](https://pytorch.org)
