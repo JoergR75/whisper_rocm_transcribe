@@ -9,3 +9,5 @@ This project provides an easy-to-use web UI to generate AI images from text prom
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue)](https://www.python.org/)
 [![Gradio Quickstart](https://img.shields.io/badge/Gradio-Quickstart-blue)](https://www.gradio.app/guides/quickstart)
 [![Whisper + ROCm](https://img.shields.io/badge/Whisper-ROCm_6.x-blue)](https://github.com/openai/whisper)
+
+<img width="1265" height="743" alt="image" src="https://github.com/user-attachments/assets/d1d24c7f-0e5c-4266-a6ad-dde8a5858fe6" />
