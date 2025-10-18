@@ -26,6 +26,7 @@ This project provides an **easy-to-use web UI Agent** for:
 2. Install **🧩 ROCm 6.4.2** + OpenCL 2.x + **PyTorch 2.8.0** (Stable) + Transformers + Docker Setup.
 3. For detailed setup instructions, visit the [ROCm 6.4.2 PyTorch 2.8.0 RDNA4 Docker Automated Deployment Repository](https://github.com/JoergR75/rocm-6.4.2-pytorch-2.8.0-rdna4-docker-automated-deployment/tree/main).
 4. Install **Gradio** (API + Web Interface)
+
 Choose your Ubuntu version below to view the correct installation steps.
     <details>
     <summary>🟢 Ubuntu 22.04.x (Jammy Jellyfish)</summary>
@@ -43,12 +44,13 @@ Choose your Ubuntu version below to view the correct installation steps.
     ```
     </details>
 
-5. Install **ffmpeg**
+6. Install **ffmpeg**
 ```echo
 sudo apt install -y ffmpeg
 ```
 
 6. Install **Whisper** (OpenAI) stable release
+
 Choose your Ubuntu version below to view the correct installation steps.
     <details>
     <summary>🟢 Ubuntu 22.04.x (Jammy Jellyfish)</summary>
