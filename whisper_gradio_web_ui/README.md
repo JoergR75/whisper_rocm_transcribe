@@ -32,6 +32,7 @@ test
 5. Install ffmpeg
 ```echo
 test
+```
 
 ### 2️⃣ Download the server script
 
