@@ -31,7 +31,7 @@ pip3 install gradio --break-system-packages
 ```
 5. Install ffmpeg
 ```echo
-test
+sudo apt install -y ffmpeg
 ```
 
 ### 2️⃣ Download the server script
