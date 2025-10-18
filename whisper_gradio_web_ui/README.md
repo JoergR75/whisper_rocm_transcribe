@@ -48,10 +48,23 @@ Choose your Ubuntu version below to view the correct installation steps.
 sudo apt install -y ffmpeg
 ```
 
-6. Install **Whisper** (OpenAI)
-```echo
-sudo apt install -y ffmpeg
-```
+6. Install **Whisper** (OpenAI) stable release
+Choose your Ubuntu version below to view the correct installation steps.
+    <details>
+    <summary>🟢 Ubuntu 22.04.x (Jammy Jellyfish)</summary>
+
+    ```bash
+    pip3 install whisper
+    ```
+    </details>
+
+    <details>
+    <summary>🔵 Ubuntu 24.04.x (Noble Numbat)</summary>
+  
+    ```bash
+    pip3 install whisper --break-system-packages
+    ```
+    </details>
 
 ### 2️⃣ Download the server script
 
