@@ -1,12 +1,15 @@
 #!/usr/bin/env python3
 """
-whisper_web_ui.py
+Script name: whisper_rocm_gradio_web_ui.py
 Web UI for Whisper ROCm transcription using Gradio.
 Automatically selects GPU/CPU, supports multiple output formats (txt, vtt, srt).
 
 Requirements:
-  pip3 install git+https://github.com/openai/whisper.git gradio torch
-  sudo apt install ffmpeg
+  Ubuntu 22.04.x or 24.04.x
+  ROCm 6.4.2 ()
+  openai-whisper
+  gradio
+  ffmpeg
 
 Author:
   Joerg Roskowetz
@@ -37,12 +40,17 @@ def ensure_ffmpeg():
         return "[WARN] ffmpeg not found. Please install it before large audio transcriptions."
     return "[INFO] ffmpeg found."
 
-def transcribe_file(input_path, model_name="small", device="cuda", language=None, task="transcribe", fp16=True):
+def transcribe_file(input_path, model_name="small", device="cuda", language="", task="transcribe"):
+    """Transcribe audio using Whisper. language='' triggers auto-detect."""
     model = whisper.load_model(model_name)
     model.to(device)
-    if device == "cpu":
-        fp16 = False
-    result = model.transcribe(input_path, language=language, task=task, fp16=fp16)
+    # Determine fp16 automatically
+    fp16 = device != "cpu"
+    
+    kwargs = {"task": task, "fp16": fp16}
+    if language.strip():  # only pass language if specified
+        kwargs["language"] = language
+    result = model.transcribe(input_path, **kwargs)
     return result
 
 def format_vtt_srt(result, out_prefix):
@@ -83,7 +91,8 @@ def whisper_web_ui(audio_file, model_name, language, task, out_format):
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     out_prefix = f"transcript_{timestamp}"
 
-    result = transcribe_file(audio_file, model_name=model_name, device=device, language=language, task=task)
+    # Pass empty string for language to enable auto-detect
+    result = transcribe_file(audio_file, model_name=model_name, device=device, language=language or "", task=task)
     text_output = result.get("text", "").strip()
 
     vtt_path, srt_path = None, None
@@ -106,7 +115,11 @@ def whisper_web_ui(audio_file, model_name, language, task, out_format):
 
 # Gradio UI
 with gr.Blocks() as demo:
-    gr.Markdown("## 🗣️➡️📝 Whisper ROCm Transcription Web UI Agent [![ROCm](https://img.shields.io/badge/AMD-ROCm_6.x-red)](https://rocmdocs.amd.com/) [![Whisper + ROCm](https://img.shields.io/badge/Whisper-ROCm_6.x-blue)](https://github.com/openai/whisper)" )
+    gr.Markdown(
+        "## 🗣️➡️📝 Whisper ROCm Transcription Web UI Agent "
+        "[![ROCm](https://img.shields.io/badge/AMD-ROCm_6.x-red)](https://rocmdocs.amd.com/) "
+        "[![Whisper + ROCm](https://img.shields.io/badge/Whisper-ROCm_6.x-blue)](https://github.com/openai/whisper)"
+    )
     with gr.Row():
         with gr.Column():
             audio_input = gr.Audio(label="Upload audio file", type="filepath")
@@ -116,14 +129,15 @@ with gr.Blocks() as demo:
             out_format = gr.Textbox(value="txt", label="Output format (txt,vtt,srt comma-separated)")
             submit_btn = gr.Button("Transcribe")
         with gr.Column():
-            #text_output = gr.Textbox(label="Transcription", interactive=False)
             text_output = gr.Textbox(label="Transcription", interactive=False, lines=20, max_lines=40)
             ffmpeg_status_output = gr.Textbox(label="FFmpeg status", interactive=False)
             file_output = gr.File(label="Download output files", file_types=[".txt",".vtt",".srt"])
 
-    submit_btn.click(whisper_web_ui,
-                     inputs=[audio_input, model_name, language, task, out_format],
-                     outputs=[text_output, ffmpeg_status_output, file_output])
+    submit_btn.click(
+        whisper_web_ui,
+        inputs=[audio_input, model_name, language, task, out_format],
+        outputs=[text_output, ffmpeg_status_output, file_output]
+    )
 
 if __name__ == "__main__":
     demo.launch(server_name="0.0.0.0", server_port=7860, share=False)
