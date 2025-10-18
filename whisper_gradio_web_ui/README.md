@@ -1,4 +1,4 @@
-# 🗣️➡️📝 Whisper Transcription Web UI Agent — ROCm-Ready
+# 🎤🧠➡️📝 Whisper Transcription Web UI Agent — ROCm-Ready
 
 A **lightweight Gradio-based web interface** for running the OpenAI **Whisper** transcription model on **AMD ROCm** systems.  
 
