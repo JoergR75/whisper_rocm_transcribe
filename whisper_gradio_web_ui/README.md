@@ -83,7 +83,7 @@ The Web server will be launched with following parameters:
 - share=True → If you set this option inside the script’s launch() method, Gradio will create a temporary public URL. This allows you to share access with others outside your local network.
 > ⚠️ **Attention**  
 > The first time you launch the script, it will download the model weights.  
-> This process can take **1–5 minutes**, depending on your hardware and internet connection.
+> This process can take **1–5 minutes**, depending on the model your hardware and internet connection.
 
 <img width="852" height="132" alt="image" src="https://github.com/user-attachments/assets/17feaac6-361b-4b33-a15e-1215dbc612da" />
 
