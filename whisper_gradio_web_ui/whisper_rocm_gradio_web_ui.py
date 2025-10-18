@@ -117,8 +117,8 @@ def whisper_web_ui(audio_file, model_name, language, task, out_format):
 with gr.Blocks() as demo:
     gr.Markdown(
         "## 🎤🧠➡️📝 Whisper ROCm AI Transcriber Agent\n"
-        "[![ROCm](https://img.shields.io/badge/AMD-ROCm_6.x-red)](https://rocmdocs.amd.com/) "
-        "[![Whisper + ROCm](https://img.shields.io/badge/Whisper-ROCm_6.x-blue)](https://github.com/openai/whisper)"
+        "[![ROCm](https://img.shields.io/badge/AMD-ROCm_6.x-red)](https://rocmdocs.amd.com/)"
+        "[![Whisper GitHub repo](https://img.shields.io/badge/Whisper-GitHub_repo-blue)](https://github.com/JoergR75/whisper_rocm_transcribe/tree/main/whisper_gradio_web_ui)"
     )
     with gr.Row():
         with gr.Column():
