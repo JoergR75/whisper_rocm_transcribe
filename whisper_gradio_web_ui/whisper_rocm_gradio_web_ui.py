@@ -6,7 +6,7 @@ Automatically selects GPU/CPU, supports multiple output formats (txt, vtt, srt).
 
 Requirements:
   Ubuntu 22.04.x or 24.04.x
-  ROCm 6.4.2 ()
+  ROCm 6.4.2 or newer (https://github.com/JoergR75/rocm-6.4.2-pytorch-2.8.0-rdna4-docker-automated-deployment)
   openai-whisper
   gradio
   ffmpeg
