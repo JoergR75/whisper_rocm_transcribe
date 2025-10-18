@@ -43,7 +43,7 @@ Choose your Ubuntu version below to view the correct installation steps.
     ```
     </details>
 
-6. Install **ffmpeg**
+6. Install **FFmpeg**
 ```echo
 sudo apt install -y ffmpeg
 ```
