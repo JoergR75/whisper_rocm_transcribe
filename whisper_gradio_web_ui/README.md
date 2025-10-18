@@ -37,6 +37,7 @@ pip3 install gradio
 
 <details>
 <summary>🔵 Ubuntu 24.04.x (Noble Numbat)</summary>
+  
 ```bash
 pip3 install gradio --break-system-packages
 ```
