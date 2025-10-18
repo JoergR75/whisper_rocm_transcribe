@@ -46,7 +46,7 @@ def transcribe_file(input_path, model_name="small", device="cuda", language="", 
     model.to(device)
     # Determine fp16 automatically
     fp16 = device != "cpu"
-    
+
     kwargs = {"task": task, "fp16": fp16}
     if language.strip():  # only pass language if specified
         kwargs["language"] = language
@@ -116,21 +116,21 @@ def whisper_web_ui(audio_file, model_name, language, task, out_format):
 # Gradio UI
 with gr.Blocks() as demo:
     gr.Markdown(
-        "## 🗣️➡️📝 Whisper ROCm Transcription Web UI Agent "
+        "## 🗣️➡️📝 Whisper ROCm Transcription Web UI Agent\n"
         "[![ROCm](https://img.shields.io/badge/AMD-ROCm_6.x-red)](https://rocmdocs.amd.com/) "
         "[![Whisper + ROCm](https://img.shields.io/badge/Whisper-ROCm_6.x-blue)](https://github.com/openai/whisper)"
     )
     with gr.Row():
         with gr.Column():
             audio_input = gr.Audio(label="Upload audio file", type="filepath")
-            model_name = gr.Dropdown(["tiny","base","small","medium","large"], value="small", label="Whisper model")
-            language = gr.Textbox(value="", label="Language (leave blank for auto)")
-            task = gr.Radio(["transcribe","translate"], value="transcribe", label="Task")
-            out_format = gr.Textbox(value="txt", label="Output format (txt,vtt,srt comma-separated)")
-            submit_btn = gr.Button("Transcribe")
+            model_name = gr.Dropdown(["tiny","base","small","medium","large"], value="small", label="🧠 Whisper model")
+            language = gr.Textbox(value="", label="🌐 Language (leave blank for auto)")
+            task = gr.Radio(["transcribe","translate"], value="transcribe", label="🔄 Task")
+            out_format = gr.Textbox(value="txt", label="📄💾 Output format (txt,vtt,srt comma-separated)")
+            submit_btn = gr.Button("📝 Transcribe")
         with gr.Column():
-            text_output = gr.Textbox(label="Transcription", interactive=False, lines=20, max_lines=40)
-            ffmpeg_status_output = gr.Textbox(label="FFmpeg status", interactive=False)
+            text_output = gr.Textbox(label="📄 Transcription", interactive=False, lines=20, max_lines=40)
+            ffmpeg_status_output = gr.Textbox(label="⏳🎧 FFmpeg status", interactive=False)
             file_output = gr.File(label="Download output files", file_types=[".txt",".vtt",".srt"])
 
     submit_btn.click(
