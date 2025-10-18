@@ -19,16 +19,16 @@ This project provides an **easy-to-use web UI Agent** for:
 
 <img width="1265" height="743" alt="image" src="https://github.com/user-attachments/assets/d1d24c7f-0e5c-4266-a6ad-dde8a5858fe6" />
 
-# 🌀 Installation
+## 🌀 Installation
 
-### Download the server script
+### 1️⃣ Download the server script
 
 ```echo
 wget https://raw.githubusercontent.com/JoergR75/whisper_rocm_transcribe/refs/heads/main/whisper_gradio_web_ui/whisper_rocm_gradio_web_ui.py
 ```
 <img width="1092" height="186" alt="image" src="https://github.com/user-attachments/assets/21e9407c-b5ad-484e-b06b-5c2a880ae092" />
 
-### Launch the Gradio web Agent server
+### 2️⃣ Launch the Gradio web Agent server
 
 ```echo
 python3 whisper_rocm_gradio_web_ui.py
@@ -42,7 +42,7 @@ The Web server will be launched with following parameters:
 
 <img width="956" height="112" alt="image" src="https://github.com/user-attachments/assets/4fa20acc-d8af-4769-a3d0-d2875a2f6f25" />
 
-### Launch the Gradio web Agent from another device connected to same network
+### 3️⃣ Launch the Gradio web Agent from another device connected to same network
 
 First, SSH into the web server and forward port **7860**:
 ```echo
