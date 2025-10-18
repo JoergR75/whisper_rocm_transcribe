@@ -17,7 +17,7 @@ This project provides an **easy-to-use web UI Agent** for:
 [![Gradio Quickstart](https://img.shields.io/badge/Gradio-Quickstart-blue)](https://www.gradio.app/guides/quickstart)
 [![Whisper + ROCm](https://img.shields.io/badge/Whisper-ROCm_6.x-blue)](https://github.com/openai/whisper)
 
-<img width="1265" height="743" alt="image" src="https://github.com/user-attachments/assets/d1d24c7f-0e5c-4266-a6ad-dde8a5858fe6" />
+<img width="1962" height="1510" alt="image" src="https://github.com/user-attachments/assets/5940665c-ea11-4622-884b-efa40379c2fc" />
 
 ## 🚀 Installation
 
