@@ -54,7 +54,7 @@ Choose your Ubuntu version below to view the correct installation steps.
     <summary>🟢 Ubuntu 22.04.x (Jammy Jellyfish)</summary>
 
     ```bash
-    pip3 install whisper
+    pip3 install -U openai-whisper
     ```
     </details>
 
@@ -62,7 +62,7 @@ Choose your Ubuntu version below to view the correct installation steps.
     <summary>🔵 Ubuntu 24.04.x (Noble Numbat)</summary>
   
     ```bash
-    pip3 install whisper --break-system-packages
+    pip3 install -U openai-whisper --break-system-packages
     ```
     </details>
 
